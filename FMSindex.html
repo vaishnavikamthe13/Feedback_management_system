@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Student Feedback System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="login-section" class="container">
+        <h2>كلية هندسة الالكترونيات - استبيان الطلبة</h2>
+        [span_6](start_span)<p>Please enter your password to proceed[span_6](end_span)</p>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="showDashboard()">Login</button>
+    </section>
+
+    <section id="dashboard-section" class="container" style="display:none;">
+        [span_7](start_span)<h3>General Information[span_7](end_span)</h3>
+        <label>Department:</label>
+        <select id="dept">
+            <option>Computer & Information</option>
+            <option>Communication</option>
+            <option>Electronics</option>
+            <option>System & Control</option>
+        </select>
+        
+        <label>Lecturer Name:</label>
+        <input type="text" id="lecturer" placeholder="Enter name">
+
+        <button onclick="showVoting()">Start Feedback</button>
+    </section>
+
+    <section id="voting-section" class="container" style="display:none;">
+        [span_8](start_span)<h3>Feedback Questionnaire (ABET Model)[span_8](end_span)</h3>
+        <table id="feedbackTable">
+            <tr>
+                [span_9](start_span)<th>Question[span_9](end_span)</th>
+                <th>Ex (6)</th>
+                <th>VG (5)</th>
+                <th>G (4)</th>
+                <th>Acc (3)</th>
+                <th>W (2)</th>
+                <th>VW (1)</th>
+            </tr>
+            <tr>
+                <td>1. Lecturer's ability to present alternative explanations</td>
+                <td><input type="radio" name="q1" value="6"></td>
+                <td><input type="radio" name="q1" value="5"></td>
+                <td><input type="radio" name="q1" value="4"></td>
+                <td><input type="radio" name="q1" value="3"></td>
+                <td><input type="radio" name="q1" value="2"></td>
+                <td><input type="radio" name="q1" value="1"></td>
+            </tr>
+            </table>
+        <button onclick="submitFeedback()">Submit Feedback</button>
+    </section>
+
+    <script>
+        function showDashboard() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('dashboard-section').style.display = 'block';
+        }
+        function showVoting() {
+            document.getElementById('dashboard-section').style.display = 'none';
+            document.getElementById('voting-section').style.display = 'block';
+        }
+        function submitFeedback() {
+            [span_10](start_span)alert("Feedback submitted successfully[span_10](end_span)!");
+            location.reload();
+        }
+    </script>
+</body>
+</html>
